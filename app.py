@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from model.custom_model import Teste
 
 app = FastAPI()
@@ -13,4 +13,4 @@ async def fulano(nome: str):
 
 @app.post('/fulano')
 async def fulano(nome: Teste):
-    return {"message": f"oi {nome}"}
+    return {"message": f"oi {nome.nome}"}
